@@ -8,11 +8,13 @@ class Tajwid extends CI_Controller {
 		$this->load->view('index.html');
 	}
 	
-	public function materi($nomor=null){
-		if($nomor==null){
+	public function materi($materi=null, $submateri=null){
+		if($materi==null){
 			$this->load->view('menu-materi.html');
+		}else if ($submateri == null){
+			redirect(base_url() . "materi/{$materi}/1");
 		}else{
-			$this->load->view('materi.html');
+			$this->load->view("materi/materi-{$materi}/materi-{$materi}-{$submateri}.html");
 		}
 	}
 	public function hasil_quiz($lulus){

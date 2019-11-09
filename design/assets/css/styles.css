@@ -1,3 +1,6 @@
+* {
+}
+
 #logo {
   object-fit: fill;
   width: 8vw;
@@ -11,16 +14,9 @@
   padding-bottom: 8px;
 }
 
-body {
-  background-image: url("../../assets/img/Background%201.png?h=4a2f09c89f3f4c8b5e23ccd74cc2dccb");
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-origin: content-box;
-  background-clip: content-box;
-  min-height: 100%;
+#wrapper {
   position: relative;
-  background-attachment: fixed;
+  min-height: 100vh;
 }
 
 .pilihan-utama {
@@ -201,10 +197,7 @@ html {
 }
 
 .bg-skor {
-  /*background-image: url("../../assets/img//icon_checkout.png?h=e527c20c2f7945101db2434e11b624a1");*/
   width: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
   z-index: 10;
   position: absolute;
   top: 0;
@@ -251,12 +244,9 @@ html {
   margin-right: 15vw;
 }
 
-.bg-menu-2 {
-  background-image: url("../../assets/img/Background%202.png?h=2125e0c31a2e19596b5fdbd4b1956329")!important;
-}
-
 body {
   min-height: 100vh;
+  position: relative;
 }
 
 .content-card {
@@ -273,5 +263,36 @@ body {
 
 .audio {
   max-width: 100%!important;
+}
+
+#background {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(white, #4ACCE8);
+  z-index: -1!important;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#bg-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+#bg-top-left {
+  left: 4vw;
+}
+
+#bg-top-right {
+  right: 4vw;
+}
+
+.bg-top {
+  width: 10vw;
+  top: 4vw;
+  position: absolute;
+  min-width: 80px;
 }
 
