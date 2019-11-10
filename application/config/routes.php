@@ -49,7 +49,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['quiz/hasil/(:any)'] = 'tajwid/hasil_quiz/$1';
 $route['quiz/(:num)'] = 'tajwid/quiz/$1';
 $route['materi/(:num)'] = 'tajwid/materi/$1';
 $route['materi/(:num)/(:num)'] = 'tajwid/materi/$1/$2';

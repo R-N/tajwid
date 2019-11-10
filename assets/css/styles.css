@@ -59,13 +59,13 @@ html {
 }
 
 .page-footer {
-  margin-top: auto;
+  margin-top: 0;
   margin-left: auto;
-  position: absolute;
-  bottom: 0;
+  position: relative;
   background-color: rgb(102,187,106);
   margin-right: auto;
   width: 100%;
+  border: none;
 }
 
 .icon-materi {
@@ -90,6 +90,8 @@ html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
 }
 
 .center-horizontal {
@@ -97,6 +99,8 @@ html {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
 }
 
 .center-vertical {
@@ -104,6 +108,8 @@ html {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
 }
 
 .nav-item > * {
@@ -216,6 +222,8 @@ html {
   transform: translate(-70%,-15%);
   width: 95%;
   z-index: 0;
+  -webkit-transform: translate(-70%,-15%);
+  -moz-transform: translate(-70%,-15%);
 }
 
 .skor {
@@ -224,8 +232,10 @@ html {
   left: 50%;
   transform: translate(-50%,-50%);
   text-align: center;
+  -webkit-transform: translate(-50%,-50%);
   z-index: 20;
   margin: 0;
+  -moz-transform: translate(-50%,-50%);
 }
 
 .skor-holder {
@@ -237,6 +247,8 @@ html {
   z-index: 15;
   width: 70%;
   transform: translate(120%,0%);
+  -webkit-transform: translate(120%,0%);
+  -moz-transform: translate(120%,0%);
 }
 
 .skor-holder-gagal {
@@ -273,12 +285,16 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  margin-bottom: 0;
+  border: none;
 }
 
 #bg-bottom {
   position: absolute;
   bottom: 0;
   width: 100%;
+  margin-bottom: 0;
+  border: none;
 }
 
 #bg-top-left {
@@ -291,8 +307,25 @@ body {
 
 .bg-top {
   width: 10vw;
-  top: 4vw;
   position: absolute;
   min-width: 80px;
+}
+
+.hasil-quiz {
+}
+
+.d-none {
+  display: none!important;
+}
+
+main {
+  position: relative;
+  border: none;
+  margin: 0;
+}
+
+main container {
+  margin-bottom: 0;
+  border: 0;
 }
 

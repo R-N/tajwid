@@ -51,7 +51,7 @@
                             <div class="card-body px-5">
                                 <h4 class="card-title my-2" id="content-title">Quiz Level 1</h4>
                                 <h5 class="text-left text-muted card-subtitle my-3" id="content-subtitle">Soal 1</h5>
-                                <div class="text-left audio-holder"><audio class="audio" controls=""><source src="#" type="audio/mpeg"></audio></div>
+                                <div class="text-left audio-holder"><audio class="audio" controls="true" src="#" preload="auto" type="audio/mpeg"></audio></div>
                                 <p class="text-left card-text" id="p-soal">Bacaan Idhar Halqi terdapat pada kalimat ...<br></p>
                                 <div class="text-left clearfix align-middle" id="quiz-soal"><button class="btn btn-light border rounded border-secondary float-left answer-selected mr-3 btn-answer mt-3" id="btn-answer-1" type="button">a</button><button class="btn btn-light border rounded border-secondary float-left mr-3 btn-answer mt-3"
                                         id="btn-answer-2" type="button">b</button><button class="btn btn-light border rounded border-secondary float-left mr-3 mt-3 btn-answer" id="btn-answer-3" type="button">c</button><button class="btn btn-light border rounded border-secondary float-left mr-3 mt-3 btn-answer"
@@ -79,6 +79,12 @@
     <script src="<?php echo base_url(); ?>assets/js/bootstrap-4-navbar.js?h=b895152ac31eeb67e51dab7f59b9c258"></script>
     <script src="<?php echo base_url(); ?>assets/js/functions.js?h=74514cd30d1f624b28e6f247c35d7ace"></script>
     <script src="<?php echo base_url(); ?>assets/js/js.cookie-2.2.1.min.js?h=29c7d6518c23f2453028c4f702e8fba4"></script>
+	<script>
+		var baseUrl = "<?=base_url();?>";
+		var maxLevelIndex = <?=$max_level;?>-1;
+		var level = <?=json_encode($level);?>;
+		loadLevel(new Level(level));
+	</script>
 </body>
 
 </html>
