@@ -36,7 +36,6 @@ class Quiz{
         this.nilai = 0;
         this.currentSoalIndex = -1;
         this.level = level;
-		alert(typeof(level) + "\n" + new Error().stack);
         level.shuffle();
         $("#content-title").text("Quiz Level " + this.level.level)
         $(".hasil-quiz").addClass("d-none");
