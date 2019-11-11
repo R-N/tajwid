@@ -118,7 +118,6 @@ class Quiz extends CI_Model {
 				"فَ نْبِكَ"
 			)
 		]);
-		$this->levels = array($level1);
 		
 		$level2 = new Level(2, [
 			//soal 11
@@ -181,7 +180,6 @@ class Quiz extends CI_Model {
 			)
 
 		]);
-		$this->levels = array($level2);
 		
 		$level3 = new Level(3,[
 			//soal 16
@@ -244,7 +242,7 @@ class Quiz extends CI_Model {
 				base_url("assets/audio/Soal 20.m4a")
 			)
 		]);
-		$this->levels = array($level3);
+		$this->levels = array($level1, $level2, $level3);
 		
 		$this->max_level = count($this->levels);
 	}
