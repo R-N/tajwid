@@ -67,7 +67,7 @@ class Quiz{
         if(nextSoal == null){
             this.endQuiz();
         }else{
-            nextSoal.load();
+			this.loadSoal();
         }
     }
 
@@ -160,7 +160,7 @@ function getLevel(){
 function loadLevel(level){
     currentLevelIndex = level.level-1;
     quiz = new Quiz();
-    quiz.loadLevel(level)
+    quiz.loadLevel(level);
 }
 function jawab(){
     quiz.jawab();
