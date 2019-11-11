@@ -87,7 +87,7 @@ class Quiz{
         $("#quiz").addClass("d-none");
         let skor = this.hitungNilai();
         $(".skor").text(skor);
-        if(skor > 80){
+        if(skor >= 70){
             $("#quiz-lulus").removeClass("d-none");
             Cookies.set("level", max(Cookies.get("level"), currentLevelIndex+1));
         }else{
