@@ -67,7 +67,7 @@ class Quiz{
         if(nextSoal == null){
             this.endQuiz();
         }else{
-            nextSoal.load();
+			this.loadSoal();
         }
     }
 
@@ -87,7 +87,7 @@ class Quiz{
         $("#quiz").addClass("d-none");
         let skor = this.hitungNilai();
         $(".skor").text(skor);
-        if(skor > 80){
+        if(skor >= 70){
             $("#quiz-lulus").removeClass("d-none");
             Cookies.set("level", max(Cookies.get("level"), currentLevelIndex+1));
         }else{
@@ -160,7 +160,7 @@ function getLevel(){
 function loadLevel(level){
     currentLevelIndex = level.level-1;
     quiz = new Quiz();
-    quiz.loadLevel(level)
+    quiz.loadLevel(level);
 }
 function jawab(){
     quiz.jawab();
