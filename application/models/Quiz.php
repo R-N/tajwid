@@ -122,7 +122,7 @@ class Quiz extends CI_Model {
 		$level2 = new Level(2, [
 			//soal 11
 			new Soal(
-				"مِمَّا, Merupakan bacaan?",
+				"Merupakan bacaan?",
 				[
 					"Idgham Mimi",
 					"Ghunnah",
@@ -134,7 +134,7 @@ class Quiz extends CI_Model {
 
 			//soal 12
 			new Soal(
-				"ب ج د ط ق, Termasuk dalam huruf-huruf?",
+				"Termasuk dalam huruf-huruf?",
 				[
 					"Idzhar Halqi",
 					"Idgham Bighunnah",
@@ -146,7 +146,7 @@ class Quiz extends CI_Model {
 
 			//soal 13
 			new Soal(
-				"اَقُلْ لَكَ, Merupakan bacaaan?",
+				"Merupakan bacaaan?",
 				[
 					"Ghunnah",
 					"Idgham Mimi",
@@ -169,7 +169,7 @@ class Quiz extends CI_Model {
 
 			//soal 15
 			new Soal(
-				"وَقَالَتْ طَا لِفَةُ, Merupakan bacaan?",
+				"Merupakan bacaan?",
 				[
 					"Idgham Mutamatsilain",
 					"Idgham Mutajanisain",
@@ -184,7 +184,7 @@ class Quiz extends CI_Model {
 		$level3 = new Level(3,[
 			//soal 16
 			new Soal(
-				"تُبْدُ وْ نَ, Merupakan bacaan?",
+				"Merupakan bacaan?",
 				[
 					"Mad Iwadh",
 					"Mad Layyin",
@@ -196,7 +196,7 @@ class Quiz extends CI_Model {
 
 			//soal 17
 			new Soal(
-				"السَّمَآءِ , Merupakan bacaan?",
+				"Merupakan bacaan?",
 				[
 					"Mad Wajib Muttasil",
 					"Mad Jaiz Munfasil",
@@ -208,7 +208,7 @@ class Quiz extends CI_Model {
 
 			//soal 18
 			new Soal(
-				"إِنَّآأَنْزَلْنَهُ, Merupakan bacaan?",
+				"Merupakan bacaan?",
 				[
 					"Mad Arid Lis Sukun",
 					"Mad iwadh",
@@ -220,7 +220,7 @@ class Quiz extends CI_Model {
 
 			//soal 19
 			new Soal(
-				"كَآفَّهً, Merupakan bacaan?",
+				"Merupakan bacaan?",
 				[
 					"Mad Jaiz Munfasil",
 					"Mad Lazim Kilmi Mutsaqqol",
@@ -232,7 +232,7 @@ class Quiz extends CI_Model {
 
 			//soal 20
 			new Soal(
-				"فَوَيْلُ لِّلْمُصَلِّيْنَ, Merupakan bacaan?",
+				"Merupakan bacaan?",
 				[
 					"Mad Jaiz Munfasil",
 					"Mad Arid Lis Sukun",
