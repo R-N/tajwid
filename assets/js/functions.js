@@ -133,12 +133,16 @@ class Soal {
         $("#p-soal").html(this.soal);
         $(".btn-answer").addClass("d-none");
         $(".answer-selected").removeClass("answer-selected");
+        $(".btn-answer.arabic").removeClass("arabic");
         $("#quiz-next").addClass("disabled");
         $("#quiz-next").attr("disabled", true);
         for(i = 0; i < this.pilihan.length; ++i){
             let $btn = $("#btn-answer-" + (i+1));
             $btn.html(this.pilihan[i]);
             $btn.removeClass("d-none");
+			if(hasArabic(this.pilihan[i])){
+				$btn.addClass("arabic");
+			}
         }
         if(this.audio == null){
             $(".audio").addClass("d-none");
@@ -181,6 +185,11 @@ function preventReload(e){
 		e.preventDefault();
 	}
 }
+function hasArabic(text){
+    var arregex = /[\u0600-\u06FF]/;
+	return arregex.test(text);
+}
+
 $(document).ready(function(){
     $("#btn-about").click(openNav);
     $(".about .closebtn").click(closeNav);
