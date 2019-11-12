@@ -69,7 +69,7 @@ html {
 }
 
 .icon-materi {
-  font-size: 60px;
+  font-size: 4rem;
 }
 
 .bg-pilihan-materi {
@@ -150,7 +150,7 @@ html {
 }
 
 .about .closebtn {
-  font-size: 16px;
+  font-size: 1.5rem;
   margin-left: auto;
   display: inline-block;
   margin: 2vw;
@@ -171,10 +171,6 @@ html {
   margin-right: 2vw;
 }
 
-.arabic {
-  font-size: 36px;
-  text-align: right;
-}
 
 .no-text-decoration {
   text-decoration: none;
@@ -329,3 +325,6 @@ main container {
   border: 0;
 }
 
+.arabic{
+	font-size: 2rem;
+}
