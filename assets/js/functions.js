@@ -176,6 +176,11 @@ function nextLevel(){
 		window.location.replace(baseUrl + "quiz/" + (currentLevelIndex+2));
 	}
 }
+function preventReload(e){
+	if(e.target.href==window.location.href){
+		e.preventDefault();
+	}
+}
 $(document).ready(function(){
     $("#btn-about").click(openNav);
     $(".about .closebtn").click(closeNav);
@@ -202,4 +207,6 @@ $(document).ready(function(){
             $(this).find("a").removeClass("disabled");
         }
     });
+	$("a.dropdown-item").click(preventReload);
+	$("a.nav-item").click(preventReload);
 })
