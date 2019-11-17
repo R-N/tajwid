@@ -45,7 +45,7 @@ class Quiz{
     }
     
     hitungNilai(){
-		return this.level.soal.hitungNilai();
+		return this.level.hitungNilai();
     }
 
     jawab(jawaban){
