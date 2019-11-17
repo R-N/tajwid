@@ -21,6 +21,12 @@ function closeNav() {
   $(".about").removeClass("open");
 }
 
+function selectAnswer(button){
+    $(".btn-answer").removeClass("answer-selected");
+    button.addClass("answer-selected");
+    $("#quiz-next").removeClass("disabled");
+    $("#quiz-next").removeAttr("disabled");
+}
 
 class Quiz{
     constructor(){
@@ -37,61 +43,48 @@ class Quiz{
         this.loadSoal();
         $("#quiz").removeClass("d-none");
     }
-	ulangLevel(){
-		this.loadLevel(this.level);
-	}
     currentSoal(){
         return this.level.soal[this.currentSoalIndex];
     }
     
     hitungNilai(){
-		return this.level.soal.hitungNilai();
+        return 100.0*this.nilai/this.level.soal.length;
     }
 
-    jawab(jawaban){
-        this.currentSoal().jawab(jawaban);
+    jawab(){
+        let $jawaban = $(".answer-selected");
+        if($jawaban.length == 0){
+            alert("Anda harus menjawab dulu");
+            return;
+        }
+        if(this.currentSoal().cekJawaban($jawaban.html())){
+            ++this.nilai;
+        }
+        let nextSoal = this.nextSoal();
+        if(nextSoal == null){
+            this.endQuiz();
+        }else{
+            nextSoal.load();
+        }
     }
 
     nextSoal(){
         if(this.level.soal.length-1 <= this.currentSoalIndex){
-            this.endQuiz();
-			return false;
+            return null;
         }
         ++this.currentSoalIndex;
-		this.loadSoal();
-		return true;
+        return this.level.soal[this.currentSoalIndex];
     }
-	
-	prevSoal(){
-		if(this.currentSoalIndex==0){
-			return false;
-		}
-		--this.currentSoalIndex;
-		this.loadSoal();
-		return true;
-	}
      
     loadSoal(){
         this.currentSoal().load();
         $("#content-subtitle").text("Soal " + (this.currentSoalIndex+1));
-		if(this.currentSoalIndex==0){
-			$("#quiz-prev").hide();
-		}else{
-			$("#quiz-prev").show();
-		}
-		if(this.currentSoalIndex == this.level.soal.length-1){
-			$("#quiz-next").hide();
-			$("#quiz-finish").show();
-		}else{
-			$("#quiz-next").show();
-			$("#quiz-finish").hide();
-		}
     }
     endQuiz(){
         $("#quiz").addClass("d-none");
         let skor = this.hitungNilai();
         $(".skor").text(skor);
-        if(skor >= 70){
+        if(skor > 80){
             $("#quiz-lulus").removeClass("d-none");
             Cookies.set("level", max(Cookies.get("level"), currentLevelIndex+1));
         }else{
@@ -104,48 +97,28 @@ function setLevel(level){
     Cookies.set("level", max(Cookies.get("level"), currentLevelIndex+1));
 }
 class Level{
-    constructor(level){
-        this.level = level.level;
-        this.soal = [];
-		for(let i = 0; i < level.soal.length; ++i){
-			this.soal.push(new Soal(level.soal[i]));
-		}
+    constructor(level, soal){
+        this.level = level;
+        this.soal = soal;
         this.shuffle();
     }
     shuffle(){
         this.soal = shuffle(this.soal);
     }
-	hitungNilai(){
-		let nilai = 0.0;
-		for(let i = 0; i < this.soal.length; ++i){
-			nilai += this.soal[i].cekJawaban() ? 1 : 0;
-		}
-		return (nilai/this.soal.length)*100;
-	}
 }
 
 class Soal {
-    constructor(soal) {
-        this.soal = soal.soal;
-        this.pilihan = soal.pilihan;
-        this.kunci = soal.kunci;
-        this.audio = soal.audio;
-		this.jawaban = null;
+    constructor(soal, pilihan, kunci, audio=null) {
+        this.soal = soal;
+        this.pilihan = pilihan;
+        this.kunci = kunci;
+        this.audio = audio;
     }
     shuffle(){
         this.pilihan = shuffle(this.pilihan);
     }
-	
-	getJawaban(){
-		return this.jawaban;
-	}
-	
-	jawab(jawaban){
-		this.jawaban = jawaban;
-	}
-	
-    cekJawaban(){
-        return this.jawaban==this.kunci;
+    cekJawaban(jawaban){
+        return jawaban==this.kunci;
     }
     
     load(){
@@ -154,108 +127,138 @@ class Soal {
         $("#p-soal").html(this.soal);
         $(".btn-answer").addClass("d-none");
         $(".answer-selected").removeClass("answer-selected");
-        $(".btn-answer.arabic").removeClass("arabic");
-		if(this.jawaban == null){
-			$("#quiz-next").addClass("disabled");
-			$("#quiz-next").attr("disabled", true);
-			$("#quiz-finish").addClass("disabled");
-			$("#quiz-finish").attr("disabled", true);
-		}else{
-			$("#quiz-next").removeClass("disabled");
-			$("#quiz-next").removeAttr("disabled");
-			$("#quiz-finish").removeClass("disabled");
-			$("#quiz-finish").removeAttr("disabled");
-		}
+        $("#quiz-next").addClass("disabled");
+        $("#quiz-next").attr("disabled", true);
         for(i = 0; i < this.pilihan.length; ++i){
             let $btn = $("#btn-answer-" + (i+1));
             $btn.html(this.pilihan[i]);
             $btn.removeClass("d-none");
-			if(hasArabic(this.pilihan[i])){
-				$btn.addClass("arabic");
-			}
-			if(this.pilihan[i] == this.jawaban){
-				$btn.addClass("answer-selected");
-			}
         }
         if(this.audio == null){
             $(".audio").addClass("d-none");
-			$(".audio").removeAttr("src");
-            //$(".audio source").removeAttr("src");
+            $(".audio source").removeAttr("src");
         }else{
             let $audio = $(".audio").first();
             $audio.removeClass("d-none");
-            $audio.attr("src", this.audio);
+            $audio.find("source").addAttr("src", this.audio);
         }
     }
 }
 
+var levels = [
+    new Level(1, [
+        new Soal(
+            "Bacaan Idhar Halqi terdapat pada kalimat ...",
+            [
+                "وَمَنْ خَفَّتْ",
+                "لِتٌنْذِ رَ",
+                "مُنْفَرِيْنَ",
+                "a"
+            ],
+            "وَمَنْ خَفَّتْ",
+            null
+        ),
+        new Soal(
+            "Jawab A",
+            [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E"
+            ],
+            "A",
+            null
+        )
+    ]),
+    new Level(2, [
+        new Soal(
+            "Jawab B",
+            [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E"
+            ],
+            "B",
+            null
+        ),
+        new Soal(
+            "Jawab C",
+            [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E"
+            ],
+            "C",
+            null
+        )
+    ]),
+    new Level(3, [
+        new Soal(
+            "Jawab D",
+            [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E"
+            ],
+            "D",
+            null
+        ),
+        new Soal(
+            "Jawab E",
+            [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E"
+            ],
+            "E",
+            null
+        )
+    ])
+]
 var quiz = null;
 var currentLevelIndex = 0;
 function getLevel(){
     return max(currentLevelIndex+1, Cookies.get("level"));
 }
 function loadLevel(level){
-    currentLevelIndex = level.level-1;
+    currentLevelIndex = level-1;
     quiz = new Quiz();
-    quiz.loadLevel(level);
+    quiz.loadLevel(levels[currentLevelIndex]);
 }
-function nextSoal(){
-	let $jawaban = $(".answer-selected");
-	if($jawaban.length == 0){
-		alert("Anda harus menjawab dulu");
-		return;
-	}
-    quiz.nextSoal();
-}
-
-function prevSoal(){
-    quiz.prevSoal();
-}
-
-function jawab(button){
-    $(".btn-answer").removeClass("answer-selected");
-    button.addClass("answer-selected");
-    $("#quiz-next").removeClass("disabled");
-    $("#quiz-next").removeAttr("disabled");
-    $("#quiz-finish").removeClass("disabled");
-    $("#quiz-finish").removeAttr("disabled");
-	quiz.jawab(button.html());
+function jawab(){
+    quiz.jawab();
 }
 function ulangLevel(){
-    quiz.ulangLevel();
+    quiz.loadLevel(levels[currentLevelIndex]);
 }
 function nextLevel(){
-    if(maxLevelIndex <= currentLevelIndex){
+    if(levels.length-1 <= currentLevelIndex){
         alert("Anda sudah menyelesaikan level tertinggi");
-		window.location.replace(baseUrl + "quiz");
-    }else{
-		window.location.replace(baseUrl + "quiz/" + (currentLevelIndex+2));
-	}
-}
-function preventReload(e){
-	if(e.target.href==window.location.href){
-		e.preventDefault();
-	}
-}
-function hasArabic(text){
-    var arregex = /[\u0600-\u06FF]/;
-	return arregex.test(text);
+        return;
+    }
+    loadLevel(currentLevelIndex+2);
 }
 
 $(document).ready(function(){
     $("#btn-about").click(openNav);
     $(".about .closebtn").click(closeNav);
     $(".btn-answer").click(function(){
-        jawab($(this));
+        selectAnswer($(this))
     });
     $("#quiz-next").click(function(){
-        nextSoal();
+        quiz.jawab();
     });
-    $("#quiz-prev").click(function(){
-        prevSoal();
-    });
-    $("#quiz-finish").click(function(){
-        quiz.endQuiz();
+    $("#quiz").ready(function(){
+        loadLevel(1);
     });
     $("#btn-next-level").click(nextLevel);
     $("#btn-repeat-level").click(ulangLevel);
@@ -274,6 +277,4 @@ $(document).ready(function(){
             $(this).find("a").removeClass("disabled");
         }
     });
-	$("a.dropdown-item").click(preventReload);
-	$("a.nav-item").click(preventReload);
-})
+});
