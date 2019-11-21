@@ -20,10 +20,10 @@
                 <div class="collapse navbar-collapse text-center" id="navcol-1">
                     <ul class="nav navbar-nav text-center d-lg-flex mx-auto">
                         <li class="nav-item dropdown" role="presentation">
-							<a data-toggle="dropdown" aria-expanded="false" class="btn text-dark menu-aktif" href="#" style="font-style: normal;">MATERI</a>
+							<a data-toggle="dropdown" aria-expanded="false" class="btn text-dark menu-aktif mr-3" href="#" style="font-style: normal;">MATERI</a>
 							<?php $this->view('dropdown-materi.html'); ?>
 						</li>
-                        <li class="nav-item" role="presentation"><a class="btn" role="button" href="<?php echo base_url(); ?>quiz">QUIZ</a></li>
+                        <li class="nav-item" role="presentation"><a class="btn ml-3" role="button" href="<?php echo base_url(); ?>quiz">QUIZ</a></li>
                         <li class="nav-item" role="presentation"></li>
                     </ul><button class="btn" id="btn-about" type="button">ABOUT</button></div>
             </div>
@@ -32,39 +32,28 @@
             <div class="container text-center py-5">
                 <div class="card content-card">
                     <div class="card-body px-5">
-                        <h4 class="card-title my-2 clearfix p-relative">Idgham Mutajanisain<a class="btn btn-success btn-sm float-left left" role="button" href="<?=base_url();?>materi">Back</a></h4>
-                        <p class="text-left card-text"><br>Idghom Mutajanisain adalah pertemuan dua huruf yang memiliki makhraj sama, tetapi sifatnya berbeda. Cara membaca idghom ini tidak lagi menggunakan ghunnah, tetapi tanpa ghunnah seperti ketika mengucapkan Nun Mati bertemu dengan huruf hijaiyah Lam atau Ro’. Namun, tetap ada huruf tertentu yang cara membacanya menggunakan ghunnah.
-                                                        <br>Contoh :</p>
-                        <table>
-                            <tr>
-                                    <th>No.</th>
-                                    <th>Huruf dan Membacanya</th>
-                            </tr>
-                            <tr>
-                                    <td>1</td>
-                                    <td>ت mati bertemu dengan ط, dibaca idghom tanpa dengung</td>
-                            </tr>
-                            <tr>
-                                    <td>2</td>
-                                    <td>ت  mati bertemu dengan د, dibaca idghom tanpa dengung</td>
-                            </tr>
-                            <tr>
-                                    <td>3</td>
-                                    <td>د mati bertemu dengan ت, dibaca idghom tanpa dengung</td>
-                            </tr>
-                            <tr>
-                                    <td>4</td>
-                                    <td>د mati bertemu dengan ظ, dibaca idghom tanpa dengung</td>
-                            </tr>
-                            <tr>
-                                    <td>5</td>
-                                    <td> ث mati bertemu dengan د, dibaca idghom tanpa dengung</td>
-                            </tr>
-                            <tr>
-                                    <td>6</td>
-                                    <td>  ب mati bertemu dengan  م , dibaca idghom tanpa dengung</td>
-                            </tr>
-                        </table>
+                        <div class="d-block text-left">
+                            <a class="btn btn-success btn-sm mr-auto float-md-left float-lg-left float-xl-left" role="button" href="<?=base_url();?>materi">Back</a>
+                        </div>
+                        <h4 class="card-title my-2 clearfix p-relative">Hal Membaca Ra’</h4>
+                        <p class="text-left card-text"><br>Cara membaca Ra’ ada 2 macam:
+                                                        <br>1.	Yang ditebalkan
+                                                        <br>a.	Ra’ fathah. Contoh: رَبَّناَ
+                                                        <br>b.	Ra’ dhammah. Contoh:  حُرُمٌ 
+                                                        <br>c.	Ra’ sukun, sedang huruf sebelumnya berharakat fathah. Contoh:مَرْيَمُ 
+                                                        <br>d.	Ra’ sukun, sedang huruf sebelumnya berharakat kasrah. Contoh: ارْحَمْ 
+                                                        <br>e.	Ra’ sukun, huruf sebelumnya juga kasrah yang asli, tetapi sesudah ra’ itu ada salah satu dari huruf: خ ص ض غ ط ق ظ. Contoh: قِرْطاَسٌ</p>
+
+                        <p class="text-left card-text"><br>2.   Yang dibaca tipis
+                                                        <br>a.	Apabila ra’ berharakat kasrah, atau dalam permulaan lafadz atau pertengahan atau akhir lafadz atau pada lafadz pekerjaan atau nama benda. Contoh: خَيْرٌ
+                                                        <br>b.	Apabila sebelum ra’ itu ada yaa’ sukun. Contoh: رِزْقاً
+                                                        <br>c.	Apabila sebelum ra’ sukun itu huruf yang berharakat kasrah yang asli tetapi sesudahnya bukan huruf isti’laa’. Contoh: فِرْعَوْنَ </p>
+
+                        <p class="text-left card-text"><br>Yang boleh dibaca tebal dan tipis
+                                                        <br>Apabila ada huruf ra’ sukun dan huruf yang sebelumnya berharakat kasrah, sesudahnya ada salah satu huruf isti’laa’ yang berharakat kasrah maka cara membaca ra’ tadi boleh dengan tebal dan boleh juga dengan tipis. Contoh: بِحِرْصٍ
+                                                        Huruf isti’laa’ terkumpul dalam kalimat: خُصَّ ضَغْطٍ قِظْ </p>
+
+
                     </div>
                 </div>
             </div>

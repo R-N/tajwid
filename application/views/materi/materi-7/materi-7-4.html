@@ -19,10 +19,10 @@
                 <div class="collapse navbar-collapse text-center" id="navcol-1">
                     <ul class="nav navbar-nav text-center d-lg-flex mx-auto">
                         <li class="nav-item dropdown" role="presentation">
-							<a data-toggle="dropdown" aria-expanded="false" class="btn text-dark menu-aktif" href="#" style="font-style: normal;">MATERI</a>
+							<a data-toggle="dropdown" aria-expanded="false" class="btn text-dark menu-aktif mr-3" href="#" style="font-style: normal;">MATERI</a>
 							<?php $this->view('dropdown-materi.html'); ?>
 						</li>
-                        <li class="nav-item" role="presentation"><a class="btn" role="button" href="<?php echo base_url(); ?>quiz">QUIZ</a></li>
+                        <li class="nav-item" role="presentation"><a class="btn ml-3" role="button" href="<?php echo base_url(); ?>quiz">QUIZ</a></li>
                         <li class="nav-item" role="presentation"></li>
                     </ul><button class="btn" id="btn-about" type="button">ABOUT</button></div>
             </div>
@@ -31,7 +31,10 @@
             <div class="container text-center py-5">
                 <div class="card content-card">
                     <div class="card-body px-5">
-                        <h4 class="card-title my-2 clearfix p-relative">Mad Far’i (karena hamzah)<a class="btn btn-success btn-sm float-left left" role="button" href="<?=base_url();?>materi">Back</a></h4>
+                        <div class="d-block text-left">
+                            <a class="btn btn-success btn-sm mr-auto float-md-left float-lg-left float-xl-left" role="button" href="<?=base_url();?>materi">Back</a>
+                        </div>
+                        <h4 class="card-title my-2 clearfix p-relative">Mad Far’i (karena hamzah)</h4>
                         <h5 class="text-left text-muted card-subtitle my-3">Mad Wajib Muttashil</h5>
                         <p class="text-left card-text">Apabila terdapat huruf mad bertemu dengan hamzah dalam satu kalimat. Membacanya wajib dipanjangkan 4 atau 5 harakat ketika washal atau waqaf, dan boleh 6 harakat saat waqof. Dalam al Qur’an biasanya diberi tanda (~) diatas huruf terkait.</p>
 						<p class="text-left card-text">Contoh:</p>

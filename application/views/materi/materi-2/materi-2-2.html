@@ -20,10 +20,10 @@
                 <div class="collapse navbar-collapse text-center" id="navcol-1">
                     <ul class="nav navbar-nav text-center d-lg-flex mx-auto">
                         <li class="nav-item dropdown" role="presentation">
-							<a data-toggle="dropdown" aria-expanded="false" class="btn text-dark menu-aktif" href="#" style="font-style: normal;">MATERI</a>
+							<a data-toggle="dropdown" aria-expanded="false" class="btn text-dark menu-aktif mr-3" href="#" style="font-style: normal;">MATERI</a>
 							<?php $this->view('dropdown-materi.html'); ?>
 						</li>
-                        <li class="nav-item" role="presentation"><a class="btn" role="button" href="<?php echo base_url(); ?>quiz">QUIZ</a></li>
+                        <li class="nav-item" role="presentation"><a class="btn ml-3" role="button" href="<?php echo base_url(); ?>quiz">QUIZ</a></li>
                         <li class="nav-item" role="presentation"></li>
                     </ul><button class="btn" id="btn-about" type="button">ABOUT</button></div>
             </div>
@@ -32,7 +32,10 @@
             <div class="container text-center py-5">
                 <div class="card content-card">
                     <div class="card-body px-5">
-                        <h4 class="card-title my-2 clearfix p-relative">Hukum Mim Mati (م)<a class="btn btn-success btn-sm float-left left" role="button" href="<?=base_url();?>materi">Back</a></h4>
+                        <div class="d-block text-left">
+                            <a class="btn btn-success btn-sm mr-auto float-md-left float-lg-left float-xl-left" role="button" href="<?=base_url();?>materi">Back</a>
+                        </div>
+                        <h4 class="card-title my-2 clearfix p-relative">Hukum Mim Mati (م)</h4>
                         <h5 class="text-left text-muted card-subtitle my-3">Idgham Mitslain/idgham mimi</h5>
                         <p class="text-left card-text">yaitu apabila mim mati bertemu dengan mim. Cara pengucapannya harus disertai dengan ghunnah.<br> Contoh:<br></p>
                         <p class="card-text arabic">وَلَكُمْ مَّا كَسَبْتُمْ</p>
