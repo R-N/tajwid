@@ -20,10 +20,10 @@
                 <div class="collapse navbar-collapse text-center" id="navcol-1">
                     <ul class="nav navbar-nav text-center d-lg-flex mx-auto">
                         <li class="nav-item dropdown" role="presentation">
-							<a data-toggle="dropdown" aria-expanded="false" class="btn text-dark menu-aktif" href="#" style="font-style: normal;">MATERI</a>
+							<a data-toggle="dropdown" aria-expanded="false" class="btn text-dark menu-aktif mr-3" href="#" style="font-style: normal;">MATERI</a>
 							<?php $this->view('dropdown-materi.html'); ?>
 						</li>
-                        <li class="nav-item" role="presentation"><a class="btn" role="button" href="<?php echo base_url(); ?>quiz">QUIZ</a></li>
+                        <li class="nav-item" role="presentation"><a class="btn ml-3" role="button" href="<?php echo base_url(); ?>quiz">QUIZ</a></li>
                         <li class="nav-item" role="presentation"></li>
                     </ul><button class="btn" id="btn-about" type="button">ABOUT</button></div>
             </div>
@@ -32,14 +32,20 @@
             <div class="container text-center py-5">
                 <div class="card content-card">
                     <div class="card-body px-5">
-                        <h4 class="card-title my-2 clearfix p-relative">Waqaf<a class="btn btn-success btn-sm float-left left" role="button" href="<?=base_url();?>materi">Back</a></h4>
-                        <p class="text-left card-text"><br>Cara membunyikan kalimat yang diberhentikan itu ada 6 macam:
-                                                        <br>1.	Apabila akhir kalimat itu berupa huruf berbaris sukun, maka ketika berhenti dibaca dengan tidak ada perubahan. Contoh: فَارْغَبْ
-                                                        <br>2.	Apabila di akhir kalimat itu huruf yang berbaris dengan fathah atau kasrah atau dhammah, maka ketika berhenti dibaca dengan mematikan huruf terakhir. Contoh: اَلْبَلَدِdibaca  اَلْبَلَدْ
-                                                        <br>3.	Apabila diakhir kalimat itu berupa taa’ yang diatas haa’, maka ketika berhenti dibaca dengan mebunyikan menjadi haa’ yang mati. Contoh: جَنَّةٌ  dibaca جَنَّةْ
-                                                        <br>4.	Apabila akhir kalimat itu berupa huruf yang diambil dengan huruf mati, maka dibaca dengan mematikan dua huruf mati, maka dibaca dengan mematikan dua huruf dengan suarapendek atau dibunyikan sepenuhnya tetapi huruf yang terakhir dibaca setengah suara. Contoh: بِالْهَزْلِ dibaca  باِلْهَزْلْ
-                                                        <br>5.	Apabila akhir kalimat itu berupa huruf yang didahului dengan mad atau mad lien maka dibaca dengan mematian huruf yang terakhir dengan memanjangkan madnya 2 harakat atau 4 harakat atau 6 harakat. Yaitu menjadi Mad aridl lissukun. Contoh: اْلعَذاَبُ
-                                                        <br>6.	Apabila akhir kalimat itu berbaris fathahtain maka dibaca dengan membunyikan menjadi fathah yang dipanjangkan dua harakat dan menjadi Mad Iwadl. Contoh: سَلاَمًا dibaca  سَلاَمَا
+                        <div class="d-block text-left">
+                            <a class="btn btn-success btn-sm mr-auto float-md-left float-lg-left float-xl-left" role="button" href="<?=base_url();?>materi">Back</a>
+                        </div>
+                        <h4 class="card-title my-2 clearfix p-relative">Idgham Mutamatsilain</h4>
+                        <p class="text-left card-text"><br>Idgham Mutamatsilain tersusun dari dua kata yakni idgham dan mutamatsilain. Idgham berarti memasukkan, sedangkan mutamatsilain bermakna dua huruf yang sama.
+                                                        <br>Pengertian idgham mutamatsilain adalah memasukkan dua huruf (huruf pertama dimasukkan ke huruf kedua) yang sama (baik makhraj maupun sifatnya) dengan syarat huruf pertama (berharakat) mati/sukun dan huruf kedua hidup. 
+                                                        <br>Idgham Mutamatsilain dapat terjadi jika kedua hurufnya sama dan huruf pertama sukun lalu huruf kedua hidup. Misalnya huruf ba (ب) ketemu ba (ب), ta (ت) ketemu ta (ت), dal (د) ketemu dal (د), dan seterusnya.</p>
+                        <p class="text-left card-text">Contoh Idgham Mutamatsillain :<br></p>
+                        <p class="text-left card-text">Huruf ta (ت) ketemu ta (ت) dalam QS Al-Baqarah [02] ayat 16<br></p>
+                        <p class="card-text arabic">فَمَا رَبِحَتْ تِجَارَتُهُم</p>
+                        <p class="text-left card-text"><br>Huruf dal (د) ketemu dal (د) dalam QS Al-Maidah [05] ayat 61</p>
+                        <p class="card-text arabic">وَقَدْ دَخَلُوا</p>
+                        <p class="text-left card-text"><br>Huruf kaf (ك) bertemu kaf (ك) dalam QS An-Nisa [04] ayat 78</p>
+                        <p class="card-text arabic">يُدْرِكْكُمُ</p>
                     </div>
                 </div>
             </div>

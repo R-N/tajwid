@@ -20,10 +20,10 @@
                 <div class="collapse navbar-collapse text-center" id="navcol-1">
                     <ul class="nav navbar-nav text-center d-lg-flex mx-auto">
                         <li class="nav-item dropdown" role="presentation">
-							<a data-toggle="dropdown" aria-expanded="false" class="btn text-dark menu-aktif" href="#" style="font-style: normal;">MATERI</a>
+							<a data-toggle="dropdown" aria-expanded="false" class="btn text-dark menu-aktif mr-3" href="#" style="font-style: normal;">MATERI</a>
 							<?php $this->view('dropdown-materi.html'); ?>
 						</li>
-                        <li class="nav-item" role="presentation"><a class="btn" role="button" href="<?php echo base_url(); ?>quiz">QUIZ</a></li>
+                        <li class="nav-item" role="presentation"><a class="btn ml-3" role="button" href="<?php echo base_url(); ?>quiz">QUIZ</a></li>
                         <li class="nav-item" role="presentation"></li>
                     </ul><button class="btn" id="btn-about" type="button">ABOUT</button></div>
             </div>
@@ -32,14 +32,32 @@
             <div class="container text-center py-5">
                 <div class="card content-card">
                     <div class="card-body px-5">
-                        <h4 class="card-title my-2 clearfix p-relative">Mad Far’i<a class="btn btn-success btn-sm float-left left" role="button" href="<?=base_url();?>materi">Back</a></h4>
-                        <p class="text-left card-text"><br>Mad Far’i adalah mad tambahan dari mad ashli karena dua sebab, yakni hamzah (ء) dan sukun, dua sebab ini disebut sebab lafdzi Mad Far’i karena hamzah ada 3 macam, yakni:</p>
-                        <p class="text-left card-text">1. Mad Wajib Muttashil<br>
-                                                        2. Mad Ja’iz Munfashil<br>
-                                                        3. Mad Badal<br></p>
-                        <p class="text-left card-text">Mad Far’i karena sukun ada 2 macam, yakni:<br></p>
-                        <p class="text-left card-text">1. Mad ‘Âridh Lissukun<br>
-                                                        2. Mad Lazim<br></p>
+                        <div class="d-block text-left">
+                            <a class="btn btn-success btn-sm mr-auto float-md-left float-lg-left float-xl-left" role="button" href="<?=base_url();?>materi">Back</a>
+                        </div>
+                        <h4 class="card-title my-2 clearfix p-relative">Mad Far’i (Karena Sukun)</h4>
+                        <h5 class="text-left text-muted card-subtitle my-3">Mad Lazim</h5>
+                        <p class="text-left card-text"><br>bila setelah huruf mad atau lîn terdapat huruf yang berharokat sukun (termasuk tasydid, karena tasydid adalah dobel sukun, Terbagi menjadi empat, yakni:</p>
+
+                        <h5 class="text-left text-muted card-subtitle my-3">1.  Mad Lazim Kilmiy Mukhoffaf</h5>
+                        <p class="text-left card-text"><br>bila setelah huruf mad terdapat huruf yang berharokat sukun dalam satu kata, Panjangnya 6 harakat. Hanya ada dua tempat dalam al Qur’an, yakni dalam surat Yunus : 51 dan 91.
+                                                        <br>Contoh:</p>
+                        <p class="card-text arabic">آلآنَ وَقَدْ عَصَيْتَ قَبْلُ</p>
+
+                        <h5 class="text-left text-muted card-subtitle my-3">2.	Mad Lazim Kilmiy Mutsaqqal</h5>
+                        <p class="text-left card-text"><br>yaitu bila huruf mad didahului oleh hamzah dalam satu kata, dan tidak ada hamzah atau sukun setelah huruf mad tersebut. Panjangnya 2 harakat sebagaimana mad ashli, walaupun menurut Imam Hafsh dibaca pendek.
+                                                        <br>Contoh:</p>
+                        <p class="card-text arabic">اْلحاَ قَّةُ</p>
+
+                        <h5 class="text-left text-muted card-subtitle my-3">3.	Mad Lazim Harfiy Mukhaffaf</h5>
+                        <p class="text-left card-text"><br>bila setelah huruf mad terdapat sukun asli dari huruf-huruf hijaiyyah, terjadi pada huruf Muqaththa’ah yang terdapat disebagian awal surat. Cara membaca huruf tersebut sesuai dengan nama hurufnya, dibaca panjang 6 harakat.
+                                                        <br>Contoh:</p>
+                        <p class="card-text arabic">وَالْقَلَمِ</p>
+
+                        <h5 class="text-left text-muted card-subtitle my-3">4.	Mad Lazim Harfiy Mutsaqqal</h5>
+                        <p class="text-left card-text"><br>mad yang terjadi pada huruf Muqaththa’ah yang terdapat di sebagian beberapa awal surat. Bedanya dengan mad lazim harfiy mukhaffaf, disini ada tasydid (dalam pelafalan). Cara membaca huruf tersebut sesuai dengan nama hurufnya, dibaca panjang 6 harakat dan diidghamkan.
+                                                        <br>Contoh:</p>
+                        <p class="card-text arabic">الم، طسم</p>
                     </div>
                 </div>
             </div>
