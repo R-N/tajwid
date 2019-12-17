@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>tajwid</title>
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css?h=7c5c6f3b372dda7064a00895d56c1dd5">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/fonts/simple-line-icons.min.css?h=03ab36d1dde930b7d44a712f19075641">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-4-navbar.css?h=cc430e87aa28770cd181f479f11f2af9">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/Footer-Basic.css?h=d15dfcb68fabe0442ff06063b052477c">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/styles.css?h=229c80a072c6b21236479b879f1f467b">
+</head>
+
+<body>
+    <div class="d-flex flex-column bg-menu-2" id="wrapper">
+        <nav class="navbar navbar-light navbar-expand-md bg-white shadow-sm">
+            <div class="container-fluid"><a href="<?php echo base_url(); ?>"><img class="img-fluid d-xl-flex justify-content-xl-center align-items-xl-center" id="logo" src="<?php echo base_url(); ?>assets/img/logo.png?h=648168a5ce156ee73a42e4f14159e946"></a>
+                <div></div><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse text-center" id="navcol-1">
+                    <ul class="nav navbar-nav text-center d-lg-flex mx-auto">
+                        <li class="nav-item dropdown" role="presentation">
+							<a data-toggle="dropdown" aria-expanded="false" class="btn text-dark menu-aktif mr-3" href="#" style="font-style: normal;">MATERI</a>
+							<?php $this->view('dropdown-materi.html'); ?>
+						</li>
+                        <li class="nav-item" role="presentation"><a class="btn ml-3" role="button" href="<?php echo base_url(); ?>quiz">QUIZ</a></li>
+                        <li class="nav-item" role="presentation"></li>
+                    </ul><button class="btn" id="btn-about" type="button">ABOUT</button></div>
+            </div>
+        </nav>
+        <main class="flex-grow-1 flex-fill">
+            <div class="container text-center py-5">
+                <div class="card content-card">
+                    <div class="card-body px-5">
+                        <h4 class="card-title my-2 clearfix p-relative">
+                            <div class="d-block text-left">
+                            <a class="btn btn-success btn-sm mr-auto float-md-left float-lg-left float-xl-left" role="button" href="<?=base_url();?>materi">Back</a>
+                        </div>Waqaf</h4>
+                        <p class="text-left card-text"><br>Cara membunyikan kalimat yang diberhentikan itu ada 6 macam:
+                                                        <br>1.	Tanda mim ( مـ ), disebut juga dengan wakaf lazim, adalah penghentian di akhir kalimat sempurna. Wakaf lazim disebut juga sebagai wakaf tāmm (sempurna) karena wakaf terjadi setelah kalimat sempurna dan tidak ada kaitan lagi dengan kalimat sesudahnya. Tanda mim ( م ), memiliki kemiripan dengan tanda tajwid iqlab, tetapi sangat jauh berbeda dengan fungsi dan maksudnya.
+                                                        <br>
+                                                        <br>2.	Tanda ṭha ( ﻁ ) adalah tanda wakaf mutlak sehingga diwajibkan untuk berhenti.
+                                                        <br>
+                                                        <br>3.	3.	Tanda jim ( ﺝ ) adalah wakaf jaiz, jadi boleh berhenti dan boleh melanjutkan bacaan.
+                                                        <br>
+                                                        <br>4.	Tanda dẓa ( ﻇ ) menandakan lebih baik tidak berhenti.
+                                                        <br>
+                                                        <br>5.	Tanda ṣad ( ﺹ ), disebut juga dengan wakaf murakhkhas, menunjukkan bahwa lebih baik tidak mengentikan bacaan, tetapi diperbolehkan berhenti saat dkeadaan darurat dan tanpa mengubah makna. Perbedaan antara hukum tanda ẓa dan ṣad terletak pada fungsinya; dalam kata lain, lebih diperbolehkan berhenti pada wakaf ṣad.
+                                                        <br>
+                                                        <br>6.	Tanda ṣad lam ya ( ﺻﻠﮯ ) merupakan singkatan dari al-waṣal awlā yang bermakna "wasal atau meneruskan bacaan lebih baik". Maka dari itu, meneruskan bacaan tanpa mewakafkannya lebih dianjurkan.
+                                                        <br>
+                                                        <br>7.	Tanda qaf ( ﻕ ) merupakan singkatan dari qīla alayhil waqaf yang bermakna "boleh berhenti pada wakaf sebelumnya". Maka dari itu, lebih baik meneruskan bacaan walaupun boleh diwakafkan.
+                                                        <br>
+                                                        <br>8.	Tanda ṣad lam ( صل ) merupakan singkatan dari qad yūṣalu yang bermakna "kadang kala boleh diwasalkan". Maka dari itu, lebih baik berhenti walau kadang kala boleh diwasalkan.
+                                                        <br>
+                                                        <br>9.	Tanda qif ( ﻗﻴﻒ ) artinya lebih dianjurkan untuk berhenti. Tanda tersebut biasanya muncul pada kalimat yang biasanya diteruskan oleh sang pembaca tanpa berhenti.
+                                                        <br>
+                                                        <br>10.	Tanda sin ( س ) atau tanda saktah ( ﺳﮑﺘﻪ ) menandakan pemberhentian sejenak tanpa mengambil napas, baru untuk meneruskan bacaan.
+                                                        <br>
+                                                        <br>11.	Tanda waqfah ( ﻭﻗﻔﻪ ) bermakna sama seperti wakaf saktah ( ﺳﮑﺘﻪ ), tetapi harus berhenti lebih lama tanpa mengambil nafas.
+                                                        <br>
+                                                        <br>12.	Tanda lā ( ﻻ ) menandakan pelarangan penghentian. Tanda ini muncul kadang-kala pada penghujung maupun pertengahan ayat. Jika muncul di pertengahan ayat, maka tidak dianjurkan untuk berhenti. Jika berada di penghujung ayat, sang pembaca boleh berhenti dan boleh tidak.
+                                                        <br>
+                                                        <br>13.	Tanda kaf ( ﻙ ) merupakan singkatan dari kaṭālik yang bermakna "serupa". Dengan kata lain, makna dari wakaf ini mirip dengan wakaf yang sebelumnya muncul.
+                                                        <br>
+                                                        <br>14.	Tanda titik tiga ( ... ...) disebut sebagai wakaf muraqabah atau wakaf ta'anuq, yang berarti "terikat". Wakaf ini bisa muncul sebanyak dua kali di mana saja, dan dibaca dengan berhenti di salah satu tanda tersebut. Jika sudah berhenti pada tanda pertama, tidak perlu berhenti pada tanda kedua, dan sebaliknya. Apabila akhir kalimat itu berupa huruf berbaris sukun, maka ketika berhenti dibaca dengan tidak ada perubahan. 
+                    </div>
+                </div>
+            </div>
+            <div id="background" class="lampu"><img id="bg-bottom" src="<?php echo base_url(); ?>assets/img/asset-12.png?h=283696b518c64bb71e7a013c376b64e2"><img id="bg-top-left" class="bg-top" src="<?php echo base_url(); ?>assets/img/clipartwiki.com-lantern-cliparts-4.png?h=2381b91d027a603d328b37fd961aa658"><img id="bg-top-right" class="bg-top" src="<?php echo base_url(); ?>assets/img/clipartwiki.com-lantern-cliparts-5.png?h=0944a13567d08942716862040976c9db"></div>
+        </main>
+        <footer class="d-block page-footer pb-3 pt-2">
+            <p class="text-center text-white">Copyright, uinsa tajwid 2019</p>
+        </footer>
+    </div>
+    <div id="about" class="about"><button class="btn closebtn btn-default" type="button">X</button>
+        <div class="about-content">
+            <h5>About Web Tajwid</h5>
+            <p>Aplikasi ini cocok untuk anak kelas 1 sampai 6 SD</p>
+        </div>
+    </div>
+    <script src="<?php echo base_url(); ?>assets/js/jquery.min.js?h=83e266cb1712b47c265f77a8f9e18451"></script>
+    <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js?h=63715b63ee49d5fe4844c2ecae071373"></script>
+    <script src="<?php echo base_url(); ?>assets/js/bootstrap-4-navbar.js?h=b895152ac31eeb67e51dab7f59b9c258"></script>
+    <script src="<?php echo base_url(); ?>assets/js/functions.js?h=74514cd30d1f624b28e6f247c35d7ace"></script>
+    <script src="<?php echo base_url(); ?>assets/js/js.cookie-2.2.1.min.js?h=29c7d6518c23f2453028c4f702e8fba4"></script>
+</body>
+
+</html>
