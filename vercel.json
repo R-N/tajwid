@@ -6,16 +6,16 @@
             "runtime": "vercel-php@0.7.1"
         }
     },
-    "builds": [
-      {
-        "src": "index.php",
-        "use": "@vercel/php"
-      },
-      {
-        "src": "application/**/*",
-        "use": "@vercel/static"
-      }
-    ],
+    // "builds": [
+    //     {
+    //         "src": "index.php",
+    //         "use": "@vercel/php"
+    //     },
+    //     {
+    //         "src": "application/**/*",
+    //         "use": "@vercel/static"
+    //     }
+    // ],
     "outputDirectory": "public",
     "routes": [
         {
@@ -26,9 +26,9 @@
             "src": "/(.*)",
             "dest": "/api/index.php?/$1"
         },
-      {
-        "src": "/(.*)",
-        "dest": "/index.php"
-      }
+        {
+            "src": "/(.*)",
+            "dest": "/index.php"
+        }
     ]
   }
