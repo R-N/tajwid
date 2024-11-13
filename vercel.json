@@ -9,7 +9,7 @@
     "outputDirectory": "public",
     "routes": [
         {
-            "src": "/assets/(css|favicon|images|js)/(.*)",
+            "src": "/assets/(css|favicon|images|js|img)/(.*)",
             "dest": "assets/$1/$2"
         },
         {
