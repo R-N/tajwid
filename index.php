@@ -94,7 +94,7 @@ switch (ENVIRONMENT) {
  */
 $system_path = 'system';
 //$system_path = dirname(__DIR__) . '/vendor/nguyenanhung/codeigniter-framework/system';
-//$system_path = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'vendor/nguyenanhung/codeigniter-framework/system';
+$system_path = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'vendor/nguyenanhung/codeigniter-framework/system';
 
 /*
  *---------------------------------------------------------------
@@ -112,7 +112,7 @@ $system_path = 'system';
  * NO TRAILING SLASH!
  */
 $application_folder = 'application';
-//$application_folder = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'app';
+$application_folder = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'application';
 
 /*
  *---------------------------------------------------------------
