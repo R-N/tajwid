@@ -224,7 +224,7 @@ define('BASEPATH', $system_path);
 
 // Path to the front controller (this file) directory
 define('FCPATH', dirname(__FILE__).DIRECTORY_SEPARATOR);
-const FCPATH = __DIR__ . DIRECTORY_SEPARATOR;
+//const FCPATH = __DIR__ . DIRECTORY_SEPARATOR;
 
 // Name of the "system" directory
 define('SYSDIR', basename(BASEPATH));

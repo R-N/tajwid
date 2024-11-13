@@ -33,7 +33,7 @@ $path = substr($req_uri,0,strrpos($req_uri,'/'));
 
 $config['base_url'] = $root;
 
-$config['base_url'] = 'https://tajwid-quiz.vercel.app';
+$config['base_url'] = 'https://tajwid-quiz.vercel.app/';
 
 /*
 |--------------------------------------------------------------------------
