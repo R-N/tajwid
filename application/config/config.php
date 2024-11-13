@@ -111,6 +111,7 @@ $config['charset'] = 'UTF-8';
 |
 */
 $config['enable_hooks'] = FALSE;
+$config['enable_hooks'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------
@@ -147,6 +148,7 @@ $config['subclass_prefix'] = 'MY_';
 |   autoloading (application/config/autoload.php)
 */
 $config['composer_autoload'] = FALSE;
+$config['composer_autoload'] = realpath(__DIR__ . '/../../vendor/autoload.php');
 
 /*
 |--------------------------------------------------------------------------
@@ -304,6 +306,7 @@ $config['error_views_path'] = '';
 |
 */
 $config['cache_path'] = '';
+$config['cache_path'] = realpath(__DIR__ . '/../../storage/cache_page') . '/';
 
 /*
 |--------------------------------------------------------------------------
@@ -335,6 +338,7 @@ $config['cache_query_string'] = FALSE;
 |
 */
 $config['encryption_key'] = '';
+$config['encryption_key'] = hex2bin('b8bc4dacca2d4e90bd6f5d78a5f7ca4161e00f8134996c8cd4517b86988799e6');
 
 /*
 |--------------------------------------------------------------------------
@@ -389,9 +393,16 @@ $config['encryption_key'] = '';
 */
 $config['sess_driver'] = 'files';
 $config['sess_cookie_name'] = 'ci_session';
+$config['sess_cookie_name'] = sha1(
+    'Session_Cookie_Name_HungNG_CodeIgniter_v3_skeleton_tVdOt99RreiaULriXOnxflwCzehBxQNc'
+);
 $config['sess_expiration'] = 7200;
 $config['sess_save_path'] = NULL;
 $config['sess_match_ip'] = FALSE;
+if (ENVIRONMENT === 'development') {
+    $config['sess_save_path'] = __DIR__ . '/../../storage/ci_sessions/';
+}
+$config['sess_match_ip'] = TRUE;
 $config['sess_time_to_update'] = 300;
 $config['sess_regenerate_destroy'] = FALSE;
 
@@ -461,6 +472,12 @@ $config['global_xss_filtering'] = FALSE;
 $config['csrf_protection'] = FALSE;
 $config['csrf_token_name'] = 'csrf_test_name';
 $config['csrf_cookie_name'] = 'csrf_cookie_name';
+$config['csrf_token_name'] = sha1(
+    ENVIRONMENT . 'CodeIgniter_v3_skeleton_i0ewkTGviUJ53ZU4vcXn31zamsJOtXns_csrf_test_name'
+);
+$config['csrf_cookie_name'] = sha1(
+    ENVIRONMENT . 'CodeIgniter_v3_skeleton_i0ewkTGviUJ53ZU4vcXn31zamsJOtXns_csrf_cookie_name'
+);
 $config['csrf_expire'] = 7200;
 $config['csrf_regenerate'] = TRUE;
 $config['csrf_exclude_uris'] = array();
@@ -531,3 +548,11 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:        array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+require_once __DIR__ . '/hmvc.php';
+require_once __DIR__ . '/extend/admin_config.php';
+require_once __DIR__ . '/extend/config_cache.php';
+require_once __DIR__ . '/extend/config_site.php';
+require_once __DIR__ . '/extend/config_template.php';
+require_once __DIR__ . '/extend/config_hashids.php';
+require_once __DIR__ . '/whitelist/ip.php';

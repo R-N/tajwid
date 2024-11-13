@@ -1,25 +1,56 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+defined('BASEPATH') or exit('No direct script access allowed');
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
-	public function index()
-	{
-		$this->load->view('welcome_message');
-	}
+/**
+ * Class Welcome
+ *
+ * @author    713uk13m <dev@nguyenanhung.com>
+ * @copyright 713uk13m <dev@nguyenanhung.com>
+ */
+class Welcome extends HungNG_CI_Base_Controllers
+{
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->helper('directory');
+    }
+
+    public function index(): void
+    {
+        $response = [
+            'code' => StatusCodes::HTTP_OK,
+            'message' => StatusCodes::$statusTexts[StatusCodes::HTTP_OK],
+            'data' => [
+                'author_name' => 'Hung Nguyen',
+                'author_email' => 'dev@nguyenanhung.com'
+            ],
+            'request' => [
+                'ip' => getIPAddress(),
+                'user_agent' => $this->input->user_agent(true),
+                'php_version' => PHP_VERSION
+            ]
+        ];
+        $this->output
+            ->set_status_header()
+            ->set_content_type('application/json', 'utf-8')
+            ->set_output(json_encode($response, JSON_PRETTY_PRINT))
+            ->_display();
+        exit;
+    }
+
+    public function ip(): void
+    {
+        $this->output
+            ->set_status_header()
+            ->set_content_type('application/json', 'utf-8')
+            ->set_output(getIpInformation())
+            ->_display();
+        exit;
+    }
+
+    public function php()
+    {
+        phpinfo();
+    }
 }
