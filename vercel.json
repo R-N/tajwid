@@ -15,10 +15,6 @@
         {
             "src": "/(.*)",
             "dest": "/api/index.php?/$1"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/index.php"
         }
     ]
-  }
+}
